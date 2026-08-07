@@ -1,0 +1,22 @@
+name: Hello
+
+on: push
+
+jobs:
+  hello-js:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - run: |
+          node -v
+          node -e "console.log('hello-js')"
+
+  hello-container:
+    runs-on: ubuntu-latest
+    container: node:20-alpine
+    steps:
+      - run: |
+          node -v
+          node -e "console.log('hello-container')"

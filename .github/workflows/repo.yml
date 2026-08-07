@@ -1,0 +1,11 @@
+name: Repo Dispatch
+
+on:
+  repository_dispatch:
+    types: [hello]
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "hello from repository_dispatch"
