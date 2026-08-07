@@ -6,6 +6,9 @@ jobs:
   hello-js:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
       - run: |
           node -v
           node -e "console.log('hello-js')"
