@@ -1,0 +1,15 @@
+name: Hello
+
+on: push
+
+jobs:
+  hello-js:
+    runs-on: ubuntu-latest
+    steps:
+      - run: node -e "console.log('hello-js')"
+
+  hello-container:
+    runs-on: ubuntu-latest
+    container: node:20-alpine
+    steps:
+      - run: node -e "console.log('hello-container')"
